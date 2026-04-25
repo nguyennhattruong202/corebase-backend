@@ -7,18 +7,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.Instant;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/v1")
 @Tag(name = "Health Rest API", description = "Health Rest API description")
 @Slf4j
 public class HealthController {
   @GetMapping("/health")
   public ResponseEntity<Map<String, String>> health() {
     return ResponseEntity.ok(Map.of(
-            "status", "OK",
-            "message", "Backend is running!"
+            "status", "UP",
+            "service", "CoreBase API",
+            "version", "1.0.0",
+            "timestamp", Instant.now().toString()
     ));
   }
 
