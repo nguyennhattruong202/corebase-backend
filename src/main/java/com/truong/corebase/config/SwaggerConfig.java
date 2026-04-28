@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 import java.util.List;
 
 @Configuration
-public class OpenAPIConfig {
+public class SwaggerConfig {
   @Bean
   public OpenAPI customOpenAPI() {
     return new OpenAPI()
@@ -28,7 +28,7 @@ public class OpenAPIConfig {
                                     .in(SecurityScheme.In.HEADER)
                                     .name("Authorization")))
             .info(new Info()
-                    .title("Backend API")
+                    .title("Corebase API")
                     .version("1.0.0")
                     .description("API documentation for Spring Boot backend")
                     .contact(new Contact()
