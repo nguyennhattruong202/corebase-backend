@@ -32,7 +32,7 @@ jobs:
         run: mvn -B clean compile --file pom.xml
 
       - name: Run unit tests
-        run: mvn -B test --file pom.xml
+        run: mvn -B test -Dspring.profiles.active=test --file pom.xml
 
       - name: Package JAR
         run: mvn -B package -DskipTests --file pom.xml
