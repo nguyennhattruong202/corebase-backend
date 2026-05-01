@@ -23,7 +23,7 @@ public class JwtService {
 
   @PostConstruct
   void init() {
-    byte[] keyBytes = Decoders.BASE64.decode(jwtProperties.secret());
+    byte[] keyBytes = Decoders.BASE64URL.decode(jwtProperties.secret());
     this.secretKey = Keys.hmacShaKeyFor(keyBytes);
   }
 
