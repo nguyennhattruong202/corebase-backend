@@ -10,3 +10,8 @@ spring:
   h2:
     console:
       enabled: true
+corebase:
+  jwt:
+    secret: dGVzdHNlY3JldGtleWZvcnVuaXR0ZXN0aW5nb25seWRvbm90dXNlaW5wcm9k
+    access-token-expiration: 900000
+    refresh-token-expiration: 604800000
